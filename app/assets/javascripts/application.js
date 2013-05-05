@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require recorderjs/recorder.js
+//= require recorderjs/recorderWorker.js
 //= require_tree .
