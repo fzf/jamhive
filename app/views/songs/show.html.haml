@@ -1,4 +1,5 @@
 = @song.name
+= link_to 'Play All', '#', onclick: 'playAll();'
 = nested_form_for @song, html: {multipart: true} do |s|
   = s.fields_for :tracks do |t|
     %audio{controls: '', autoplay: '', src: "#{t.object.audio.url}"}

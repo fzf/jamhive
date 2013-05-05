@@ -1,12 +1,8 @@
-$(function(){
-  // $('.start-recording').click(function(){
-  //   console.log('startRecording');
-  //   startRecording();
-  // });
-  // $('.stop-recording').click(function(){
-  //   stopRecording();
-  // });
-});
+function playAll() {
+  $('audio').each(function(index){
+    this.play();
+  });
+}
 
 var onFail = function(e) {
   console.log('Rejected!', e);
