@@ -2,6 +2,7 @@
 = link_to 'Play All', '#', onclick: 'playAll();'
 = nested_form_for @song, html: {multipart: true} do |s|
   = s.fields_for :tracks do |t|
+    %canvas.wavedisplay{dataaudiourl: "#{t.object.audio.url}"}
     %audio{controls: '', autoplay: '', src: "#{t.object.audio.url}"}
     = link_to 'Record', '#', class: 'start-recording', onclick: 'startRecording();'
     = link_to 'Stop', '#', class: 'stop-recording', onclick: 'stopRecording();'

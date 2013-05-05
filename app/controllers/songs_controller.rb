@@ -20,6 +20,7 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find params[:id]
+    binding.pry
     @song.update_attributes params[:song]
     respond_with @song
   end

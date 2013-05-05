@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505031708) do
+ActiveRecord::Schema.define(:version => 20130505101130) do
 
   create_table "songs", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20130505031708) do
     t.datetime "updated_at", :null => false
     t.string   "audio"
     t.integer  "song_id"
+    t.float    "l_buffer"
+    t.float    "r_buffer"
   end
 
 end
