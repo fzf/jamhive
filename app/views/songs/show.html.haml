@@ -2,9 +2,9 @@
 = link_to 'Play All', '#', onclick: 'playAll();'
 = nested_form_for @song, html: {multipart: true} do |s|
   = s.fields_for :tracks do |t|
-    %audio{controls: '', autoplay: '', src: "#{t.object.audio.url}"}
-    = link_to 'Record', '#', class: 'start-recording', onclick: 'startRecording();'
-    = link_to 'Stop', '#', class: 'stop-recording', onclick: 'stopRecording();'
+    %audio{controls: '', autoplay: '', src: "#{t.object.audio.url}", dataid:"#{t.object.id}"}
+    = link_to 'Record', '#', class: 'start-recording', onclick: "startRecording();"
+    = link_to 'Stop', '#', class: 'stop-recording', onclick: "stopRecording(#{t.object.id});"
     = t.link_to_remove 'Remove'
   = s.link_to_add 'Add', :tracks
   = s.submit

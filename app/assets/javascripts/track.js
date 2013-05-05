@@ -32,19 +32,21 @@ function startRecording() {
   }
 }
 
-function stopRecording() {
+function stopRecording(track_id) {
+  console.log(track_id);
+  audio_name = $('input[value="' + track_id + '"]').attr('name');
   recorder.stop();
   recorder.exportWAV(function(blob) {
     blob_url = window.URL.createObjectURL(blob);
-    document.querySelector('audio').src = blob_url;
-    saveAudio(blob);
+    document.querySelector('audio[dataid="' + track_id + '"]').src = blob_url;
+    saveAudio(blob, audio_name);
   });
 }
 
-function saveAudio(blob) {
+function saveAudio(blob, audio_name) {
   var formData = new FormData($('#new_song').get(0));
   if(blob){
-    formData.append('song[tracks_attributes][0][audio]', blob);
+    formData.append(audio_name, blob);
     sendForm(formData);
   }
   else {
