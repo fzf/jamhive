@@ -39,6 +39,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -91,6 +94,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     mysql2 (0.3.11)
+    nested_form (0.3.2)
     nokogiri (1.5.9)
     pg (0.15.1)
     poltergeist (1.2.0)
@@ -186,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   capybara
+  carrierwave
   coffee-rails
   database_cleaner
   dotenv-rails
@@ -195,6 +200,7 @@ DEPENDENCIES
   jquery-ui-rails
   launchy
   mysql2
+  nested_form
   pg
   poltergeist
   pry

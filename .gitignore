@@ -8,3 +8,4 @@ database.yml
 log/*
 Procfile.local
 tmp/*
+public/uploads/*
